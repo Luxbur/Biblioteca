@@ -1,0 +1,40 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fce4ec; /* Rosa muy clarito */
+    margin: 0;
+  }
+  
+  .navbar {
+    background-color: #f8bbd0; /* Rosa para la barra de navegación */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo {
+    color: #880e4f; /* Morado oscuro para el logo */
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: #880e4f; /* Morado oscuro para los enlaces */
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .nav-links a:hover {
+    background-color: #f48fb1; /* Rosa más oscuro al pasar el ratón */
+  }

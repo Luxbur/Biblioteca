@@ -1,0 +1,87 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fce4ec; /* Rosa muy clarito */
+    margin: 0;
+  }
+  
+  .navbar {
+    background-color: #f8bbd0; /* Rosa para la barra de navegación */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo {
+    color: #880e4f; /* Morado oscuro para el logo */
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: #880e4f; /* Morado oscuro para los enlaces */
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .nav-links a:hover {
+    background-color: #f48fb1; /* Rosa más oscuro al pasar el ratón */
+  }
+  
+  h1 {
+    color: #e91e63; /* Rosa intenso para el título */
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: 2px 2px #f8bbd0;
+  }
+  
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff8e1; /* Amarillo clarito para la tabla */
+    border: 2px solid #f48fb1; /* Borde rosa */
+    box-shadow: 5px 5px 10px #f8bbd0;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #f48fb1;
+    border-right: 1px solid #f48fb1; /* Agregamos borde derecho */
+  }
+  
+  /* Quitamos el borde derecho del último td de cada fila */
+  td:last-child, th:last-child {
+    border-right: none;
+  }
+  
+  th {
+    background-color: #f8bbd0; /* Rosa más oscuro para los encabezados */
+    color: #880e4f;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #fff3e0; /* Amarillo muy clarito para filas pares */
+  }
+  
+  td::after {
+    content: " ";
+    font-size: 0.8em;
+    color: #f06292;
+  }
+  
+  th::after{
+      content: "";
+  }
