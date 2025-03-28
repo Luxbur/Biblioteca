@@ -19,10 +19,10 @@ try{
 function mostrarLibros(libros){
     let contenido="";
     libros.forEach(libro => {
-        contenido += `<td> ${libro.titulo}</td>`;
-        contenido += `<td> ${libro.autor}</td>`;
-        contenido += `<td> ${libro.añoDePublicacion}<td>`;
-        contenido += `<td> ${libro.disponibilidad}<td>`;
+        contenido += `<h3> ${libro.titulo}</h3>`;
+        contenido += `<h4> ${libro.autor}</h4>`;
+        contenido += `<h4> ${libro.añoDePublicacion}<h4>`;
+        contenido += `<h4> ${libro.disponibilidad}<h4>`;
     });
     return contenido;
 }
