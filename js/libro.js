@@ -5,12 +5,13 @@
 //const: no se puede cambiar una vez asignado.
 //let: puede ser cambiaod en el futuro.
 async function obtenerLibros() {
+    console.log("hola");
 try{
     const respuesta=await fetch("./Backend/routes/api.php");
     const libros=await respuesta.json();
     const contenedor=document.getElementById ("contenedor-libros");
     contenedor.innerHTML=mostrarLibros(libros);
-} catch (error) {
+}catch (error){
     console.error("error al obtener libros" + error);
 }
 }
@@ -18,12 +19,13 @@ try{
 function mostrarLibros(libros){
     let contenido="";
     libros.forEach(libro => {
-        contenido += `<h3> ${libro.titulo}</h3>`;
-        contenido += `<h4> ${libro.autor}</h4>`;
-        contenido += `<h4> ${libro.añoDePublicacion}<h4>`;
-        contenido += `<h4> ${libro.disponibilidad}<h4>`;
+        contenido += `<td> ${libro.titulo}</td>`;
+        contenido += `<td> ${libro.autor}</td>`;
+        contenido += `<td> ${libro.añoDePublicacion}<td>`;
+        contenido += `<td> ${libro.disponibilidad}<td>`;
     });
     return contenido;
 }
 
+console.log("hola");
 obtenerLibros();
