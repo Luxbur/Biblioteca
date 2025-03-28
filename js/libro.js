@@ -5,7 +5,6 @@
 //const: no se puede cambiar una vez asignado.
 //let: puede ser cambiaod en el futuro.
 async function obtenerLibros() {
-    console.log("hola");
 try{
     const respuesta=await fetch("./Backend/routes/api.php");
     const libros=await respuesta.json();
@@ -17,15 +16,32 @@ try{
 }
 
 function mostrarLibros(libros){
-    let contenido="";
+    let contenido= `
+    <table border="1">
+    <thead>
+    <tr>
+    <th>Título</th>
+    <th>Autor</th>
+    <th>Año De Publicación</th>
+    <th>Disponibilidad</th>
+    </tread>
+    <tbody>
+    `;
+>
+    </th
     libros.forEach(libro => {
-        contenido += `<h3> ${libro.titulo}</h3>`;
-        contenido += `<h4> ${libro.autor}</h4>`;
-        contenido += `<h4> ${libro.añoDePublicacion}<h4>`;
-        contenido += `<h4> ${libro.disponibilidad}<h4>`;
+        contenido += `
+        <tr>
+        <td>${libro.titulo}</td>
+        <td>${libro.autor}</td>
+        <td>${libro.añoDePublicacion}</td>
+        <td>${libro.disponibilidad}</td>
+        </tr>
+        `;
     });
+        
+    contenido += `</tbody></table>`;
     return contenido;
 }
 
-console.log("hola");
 obtenerLibros();
