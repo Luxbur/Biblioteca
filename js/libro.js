@@ -15,33 +15,38 @@ try{
 }
 }
 
-function mostrarLibros(libros){
-    let contenido= `
-    <table border="1">
+function crearTabla(libros) {
+    //función que genera la tabla con comandos html
+    let tabla = `
+    <tabla border= "1" class="tabla-libros">
     <thead>
-    <tr>
-    <th>Título</th>
-    <th>Autor</th>
-    <th>Año De Publicación</th>
-    <th>Disponibilidad</th>
-    </tread>
-    <tbody>
-    `;
->
-    </th
-    libros.forEach(libro => {
-        contenido += `
         <tr>
-        <td>${libro.titulo}</td>
-        <td>${libro.autor}</td>
-        <td>${libro.añoDePublicacion}</td>
-        <td>${libro.disponibilidad}</td>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Año de Publicación</th>
+        <th>Disponible</th>
+        <th></th>
         </tr>
-        `;
-    });
-        
-    contenido += `</tbody></table>`;
-    return contenido;
+    </thead>
+    <tbody>
+`;
+
+//codigo para añadir los datos
+libros.forEach(libro => {
+    tabla += `
+    <tr class="fila-libro">
+    <td class="celda-libro">${libro-id_libro}</td>
+    <td class="celda-libro">${libro.titulo}</td>
+    <td class="celda-libro">${libro.autor}</td>
+    <td class="celda-libro">${libro.año_publicacion}</td>
+    <td class="celda-libro">${libro.disponible === 1 ? "Disponible" : "No disponible"}</td>
+    <td class="celda-libro"><a href='${libro.imagen}' target='_blank'><img style='width:10%;displey:block ' src="${libro.imagen}"></a></td>
+    </tr>
+    `;
+})
+
+return tabla;
 }
 
 obtenerLibros();
