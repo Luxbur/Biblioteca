@@ -8,8 +8,9 @@ async function obtenerLibros() {
 try{
     const respuesta=await fetch("./Backend/routes/api.php");
     const libros=await respuesta.json();
-    const contenedor=document.getElementById ("contenedor-libros");
+    const contenedor=document.getElementById ("libro");
     contenedor.innerHTML=mostrarLibros(libros);
+    console.log(libros);
 }catch (error){
     console.error("error al obtener libros" + error);
 }
