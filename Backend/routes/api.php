@@ -22,11 +22,11 @@ if ($requestMethod == "GET") {
 
 // Si la solicitud es de tipo POST, se procesa la entrada y se agrega un libro
 elseif ($requestMethod == "POST") {
-    // Leer los datos enviados en el cuerpo de la solicitud (formato JSON)
-    $data = json_decode(file_get_contents("php://input"), true);
-    
-    // Llamar a la función agregarLibro() pasando los valores extraídos del JSON
-    agregarLibro($data['titulo'], $data['autor'], $data['anio_publicacion']);
+    $titulo = $_POST["titulo"];
+    $autor = $_POST["autor"];
+    $año_de_publicacion = $_POST["año_de_publicacion"];
+    $disponible = $_POST["disponible"];
+    echo "Datos".$titulo.$autor.$año_de_publicacion.$disponible;
 } 
 // Si se usa otro método HTTP no permitido, se devuelve un mensaje de error en formato JSON
 else {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="libros.css">
-    <script src="../js/libro.js"></script>
+    <script src="../js/libros.js"></script>
     <title>Libros</title>
 </head>
 <body>
@@ -19,6 +19,19 @@
         </nav>
         <h1>Libros</h1>
 
-        <div id="libros"></div>
+        <div id="contenedor-libros"></div>
+
+        <form action="../Backend/routes/api.php" method="POST" id="frmLibro">
+            <label for="titulo">Título</label><br>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="autor">Autor</label><br>
+            <input type="text" id="autor" name="autor"><br>
+            <label for="año_de_publicacion">Año de Publicación</label><br>
+            <input type="date" id="año_de_publicacion" name="año_de_publicacion"><br>
+            <label for="disponible">Disponible</label><br>
+            <input type="text" id="disponible" name="disponible"><br>
+            <input type="submit" value="Agregar Libro"> 
+        </form>
+
 </body>
 </html>
