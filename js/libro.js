@@ -22,7 +22,7 @@ function crearTabla(libros) {
     <tabla border= "1" class="tabla-libros">
     <thead>
         <tr>
-        <th>ID</th>
+        <th>id_libro</th>
         <th>Titulo</th>
         <th>Autor</th>
         <th>Año de Publicación</th>

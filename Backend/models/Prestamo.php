@@ -3,7 +3,7 @@
 require "../config/database.php"; // Importar la conexión a la base de datos
 
 // Definición de la clase Libro que interactuará con la tabla 'libros' en la base de datos
-class Libro {
+class Prestamo {
     private $pdo;  // Declaración de una propiedad privada para almacenar la conexión PDO
 
     // El constructor recibe el objeto $pdo (conexión a la base de datos) y lo asigna a la propiedad $this->pdo
@@ -13,8 +13,8 @@ class Libro {
 
     // Método para obtener todos los libros de la base de datos
     public function obtenerTodos() {
-        // Prepara la consulta SQL para seleccionar todos los registros de la tabla 'libros'
-        $stmt = $this->pdo->prepare("SELECT * FROM libros");
+        // Prepara la consulta SQL para seleccionar todos los registros de la tabla 'Prestamo'
+        $stmt = $this->pdo->prepare("SELECT * FROM prestamos"); // Confirmamos que la tabla 'Prestamo' existe
         
         // Ejecuta la consulta
         $stmt->execute();
@@ -24,13 +24,13 @@ class Libro {
     }
 
     // Método para agregar un nuevo libro a la base de datos
-    public function agregar($id_libro,$titulo, $autor, $anio_publicacion) {
+    public function agregar($id_prestamo, $id_libro, $id_usuario, $fecha_prestamo, $fecha_devolucion) {
         // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
-        $stmt = $this->pdo->prepare("INSERT INTO libros (id_libro, titulo, autor, anio_publicacion) VALUES (:id_libro, :titulo, :autor, :anio)");
+        $stmt = $this->pdo->prepare("INSERT INTO Prestamo (id_prestamo, id_libro, id_usuario, fecha_prestamo, fecha_devolucion) VALUES (:id_prestamo, :id_libro, :id_usuario, :fecha_prestamo, :fecha_devolucion)");
         
         // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
         // Los valores del libro se pasan en un array asociativo
-        return $stmt->execute(["id_libro" => $id_libro, "titulo" => $titulo, "autor" => $autor, "anio" => $anio_publicacion]);
+        return $stmt->execute(["id_prestamo" => $id_prestamo, "id_libro" => $id_libro, "id_usuario" => $id_usuario, "fecha_prestamo" => $fecha_prestamo, "fecha_devolucion" => $fecha_devolucion]);
     }
 }
 ?>

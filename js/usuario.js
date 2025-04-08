@@ -16,7 +16,7 @@ async function obtenerUsuario() {
         <tabla border= "1" class="tabla-usuarios">
         <thead>
             <tr>
-            <th>ID</th>
+            <th>id_usuario</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Teléfono</th>
