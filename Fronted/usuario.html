@@ -88,11 +88,11 @@ form input[type="submit"]:active {
 
         <div id="contenedor-usuarios"></div>
 
-        <form action="../Backend/routes/api.php" method="post" id="frmUsuario">
+        <form action="../Backend/routes/api.php?url=usuarios" method="post" id="frmUsuario">
             <label for="nombre">Nombre</label><br>
             <input type="text" id="nombre" name="nombre"><br>
-            <label for="correo">Email</label><br>
-            <input type="email" id="correo" name="correo"><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email"><br>
             <label for="telefono">Teléfono</label><br>
             <input type="text" id="telefono" name="telefono"><br>
             <input type="submit" value="Agregar Usuario">
