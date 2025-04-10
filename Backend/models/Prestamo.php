@@ -24,13 +24,13 @@ class Prestamo {
     }
 
     // Método para agregar un nuevo libro a la base de datos
-    public function agregar($id_prestamo, $id_libro, $id_usuario, $fecha_prestamo, $fecha_devolucion) {
+    public function agregar($id_prestamo, $id_libro, $id_usuario, $fecha_prestamos, $fecha_devolucion) {
         // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
-        $stmt = $this->pdo->prepare("INSERT INTO Prestamo (id_prestamo, id_libro, id_usuario, fecha_prestamo, fecha_devolucion) VALUES (:id_prestamo, :id_libro, :id_usuario, :fecha_prestamo, :fecha_devolucion)");
+        $stmt = $this->pdo->prepare("INSERT INTO Prestamo (id_prestamo, id_libro, id_usuario, fecha_prestamos, fecha_devolucion) VALUES (:id_prestamo, :id_libro, :id_usuario, :fecha_prestamos, :fecha_devolucion)");
         
         // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
         // Los valores del libro se pasan en un array asociativo
-        return $stmt->execute(["id_prestamo" => $id_prestamo, "id_libro" => $id_libro, "id_usuario" => $id_usuario, "fecha_prestamo" => $fecha_prestamo, "fecha_devolucion" => $fecha_devolucion]);
+        return $stmt->execute(["id_prestamo" => $id_prestamo, "id_libro" => $id_libro, "id_usuario" => $id_usuario, "fecha_prestamos" => $fecha_prestamos, "fecha_devolucion" => $fecha_devolucion]);
     }
 }
 ?>

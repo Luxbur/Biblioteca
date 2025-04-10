@@ -22,14 +22,32 @@ if ($requestMethod == "GET") {
 
 // Si la solicitud es de tipo POST, se procesa la entrada y se agrega un libro
 elseif ($requestMethod == "POST") {
-    $titulo = $_POST["titulo"];
-    $autor = $_POST["autor"];
-    $año_de_publicacion = $_POST["año_de_publicacion"];
-    $disponible = $_POST["disponible"];
-    echo "Datos".$titulo.$autor.$año_de_publicacion.$disponible;
-} 
+    $solicitud = $_GET["url"];
+
+if ($solicitud == "libros") {
+        // Procesar la entrada para agregar un libro
+        $titulo = $_POST["titulo"];
+        $autor = $_POST["autor"];
+        $año_de_publicacion = $_POST["año_de_publicacion"];
+        $disponible = $_POST["disponible"];
+    echo "Datos" .$titulo.$autor.$año_de_publicacion.$disponible;
+}  elseif ($solicitud == "usuarios") {
+    // Procesar la entrada para agregar un usuario
+    $nombre = $_POST["nombre"];
+    $email = $_POST["email"];
+    $telefono = $_POST["telefono"];
+    echo "Datos" .$nombre.$email.$telefono;
+} elseif ($solicitud == "prestamos") {
+    // Procesar la entrada para agregar un prestamo
+    $id_libro = $_POST["id_libro"];
+    $id_usuario = $_POST["id_usuario"];
+    $fecha_prestamos = $_POST["fecha_prestamos"];
+    $fecha_devolucion = $_POST["fecha_devolucion"];
+    echo "Datos" .$id_libro.$id_usuario.$fecha_prestamos.$fecha_devolucion;
+}
 // Si se usa otro método HTTP no permitido, se devuelve un mensaje de error en formato JSON
 else {
     echo json_encode(["error" => "Método no permitido"]);
+}
 }
 ?>

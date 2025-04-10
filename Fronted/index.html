@@ -4,16 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Index</title>
+    <title>Biblioteca</title>
+    <style>/* Estilo de la barra de navegación */
+        .navbar {
+            background-color: #f48fb1;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .navbar .logo {
+            font-weight: bold;
+        }
+        
+        .navbar .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .navbar .nav-links li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .navbar .nav-links li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Recomendaciones Semanales */
+        #recomendaciones {
+            margin-top: 20px;
+            background-color: #f8bbd0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #recomendaciones ul {
+            list-style-type: none;
+        }
+        
+        #recomendaciones ul li {
+            margin: 10px 0;
+        }
+        
+        #recomendaciones ul li a {
+            color: #880e4f;
+            font-size: 1.1em;
+        }
+        
+        #recomendaciones ul li a:hover {
+            color: #f48fb1;
+        }
+        
+        /* Historial de Préstamos */
+        #historial {
+            margin-top: 30px;
+            background-color: #fff8e1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        #tablaPrestamos {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        #tablaPrestamos th, #tablaPrestamos td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #f48fb1;
+        }
+        
+        #tablaPrestamos th {
+            background-color: #f48fb1;
+            color: white;
+        }
+        
+        /* Estilo de alertas */
+        .alerta {
+            background-color: #e91e63;
+            color: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .alerta.oculto {
+            display: none;
+        }</style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">Biblioteca</div>
         <ul class="nav-links">
-        <li><a href="usuario.html">Usuarios</a></li>
-        <li><a href="libro.html">Libros</a></li>
-        <li><a href="prestamo.html">Préstamos</a></li>
+            <li><a href="usuario.html">Usuarios</a></li>
+            <li><a href="libro.html">Libros</a></li>
+            <li><a href="prestamo.html">Préstamos</a></li>
         </ul>
-        </nav>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Sección de Recomendaciones Semanales -->
+        <section id="recomendaciones">
+            <h2>Recomendaciones Semanales</h2>
+            <ul>
+                <li><a href="#">Libro 1: Título interesante</a></li>
+                <li><a href="#">Libro 2: Historia apasionante</a></li>
+                <li><a href="#">Libro 3: Aventura épica</a></li>
+                <li><a href="#">Libro 4: Intriga y misterio</a></li>
+            </ul>
+        </section>
 </body>
 </html>
