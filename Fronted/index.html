@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Biblioteca</title>
-    <style>/* Estilo de la barra de navegación */
+    <style>
+    /* Estilo de la barra de navegación */
         .navbar {
             background-color: #f48fb1;
             padding: 10px;
@@ -61,44 +63,185 @@
             color: #f48fb1;
         }
         
-        /* Historial de Préstamos */
-        #historial {
-            margin-top: 30px;
-            background-color: #fff8e1;
-            padding: 20px;
-            border-radius: 10px;
-        }
         
-        #tablaPrestamos {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        #tablaPrestamos th, #tablaPrestamos td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #f48fb1;
-        }
-        
-        #tablaPrestamos th {
-            background-color: #f48fb1;
-            color: white;
-        }
-        
-        /* Estilo de alertas */
-        .alerta {
-            background-color: #e91e63;
-            color: white;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        .alerta.oculto {
-            display: none;
-        }</style>
+        .carrusel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.carrusel-contenido {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.item img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.item p {
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Botones de navegación */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    color: #880e4f;
+    transition: background-color 0.3s ease;
+}
+
+.carrusel-btn:hover {
+    background-color: #f48fb1;
+    color: white;
+}
+
+.carrusel-btn.prev {
+    left: 10px;
+}
+
+.carrusel-btn.next {
+    right: 10px;
+}
+
+#libros-por-genero {
+    margin-top: 40px;
+    background-color: #ffebee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#libros-por-genero h2 {
+    color: #880e4f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.generos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.genero {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 22%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.genero h3 {
+    color: #880e4f;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.genero ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.genero ul li {
+    margin: 8px 0;
+}
+
+.genero ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.genero ul li a:hover {
+    color: #f48fb1;
+}
+
+#autores-por-abecedario {
+    margin-top: 40px;
+    background-color: #f1f8e9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#autores-por-abecedario h2 {
+    color: #880e4f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.abecedario {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.abecedario a {
+    font-size: 1.5em;
+    color: #880e4f;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.abecedario a:hover {
+    color: #f48fb1;
+}
+
+.autores-lista {
+    margin-top: 20px;
+}
+
+.letra h3 {
+    color: #880e4f;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.letra ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.letra ul li {
+    margin: 8px 0;
+}
+
+.letra ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.letra ul li a:hover {
+    color: #f48fb1;
+}
+
+</style>
 </head>
 <body>
     <!-- Navbar -->
@@ -116,12 +259,144 @@
         <!-- Sección de Recomendaciones Semanales -->
         <section id="recomendaciones">
             <h2>Recomendaciones Semanales</h2>
+            <div class="carrusel">
+              <div class="carrusel-contenido" id="carruselContenido">
+                <div class="item">
+                  <img src="../img/Balada de pájaros cantores y serpientes.webp" alt="Balada de pájaros cantores y serpientes">
+                  <p>Balada de pájaros cantores y serpientes</p>
+                </div>
+                <div class="item">
+                  <img src="../img/La paciente silenciosa.jpg" alt="La paciente silenciosa">
+                  <p>La paciente silenciosa</p>
+                </div>
+                <div class="item">
+                  <img src="../img/Quicksilver.webp" alt="Quicksilver">
+                  <p>Quicksilver</p>
+                </div>
+                <div class="item">
+                  <img src="../img/Alas de ónix (Empíreo 3).jpg" alt="Alas de ónix (Empíreo 3)">
+                  <p>Alas de ónix (Empíreo 3)</p>
+                </div>
+              </div>
+              <button class="carrusel-btn prev" id="prevBtn">&#10094;</button>
+              <button class="carrusel-btn next" id="nextBtn">&#10095;</button>
+            </div>
+          </section>
+
+<!-- Sección de Libros por Género -->
+<section id="libros-por-genero">
+    <h2>Libros por Género</h2>
+    <div class="generos">
+        <div class="genero">
+            <h3>Ficción</h3>
             <ul>
-                <li><a href="#">Libro 1: Título interesante</a></li>
-                <li><a href="#">Libro 2: Historia apasionante</a></li>
-                <li><a href="#">Libro 3: Aventura épica</a></li>
-                <li><a href="#">Libro 4: Intriga y misterio</a></li>
+                <li><a href="#">El Gran Gatsby</a></li>
+                <li><a href="#">1984</a></li>
+                <li><a href="#">Cien Años de Soledad</a></li>
             </ul>
-        </section>
+        </div>
+        <div class="genero">
+            <h3>Misterio</h3>
+            <ul>
+                <li><a href="#">La Sombra del Viento</a></li>
+                <li><a href="#">El Código Da Vinci</a></li>
+                <li><a href="#">La Chica del Tren</a></li>
+            </ul>
+        </div>
+        <div class="genero">
+            <h3>Ciencia Ficción</h3>
+            <ul>
+                <li><a href="#">Dune</a></li>
+                <li><a href="#">Neuromante</a></li>
+                <li><a href="#">Fahrenheit 451</a></li>
+            </ul>
+        </div>
+        <div class="genero">
+            <h3>Romántico</h3>
+            <ul>
+                <li><a href="#">Orgullo y Prejuicio</a></li>
+                <li><a href="#">Bajo la Misma Estrella</a></li>
+                <li><a href="#">El Cuaderno de Noah</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Autores por Abecedario -->
+<section id="autores-por-abecedario">
+    <h2>Autores por Abecedario</h2>
+    
+    <!-- Letras del abecedario -->
+    <div class="abecedario">
+        <a href="#A">A</a>
+        <a href="#B">B</a>
+        <a href="#C">C</a>
+        <a href="#D">D</a>
+        <a href="#E">E</a>
+        <a href="#F">F</a>
+        <a href="#G">G</a>
+        <a href="#H">H</a>
+        <!-- Puedes añadir más letras del abecedario aquí -->
+    </div>
+
+    <!-- Lista de Autores por Letra -->
+    <div class="autores-lista">
+        <!-- Autores que comienzan con la letra A -->
+        <div id="A" class="letra">
+            <h3>Autores con A</h3>
+            <ul>
+                <li><a href="#">Albert Einstein</a></li>
+                <li><a href="#">Aldous Huxley</a></li>
+                <li><a href="#">Agatha Christie</a></li>
+            </ul>
+        </div>
+        <!-- Autores que comienzan con la letra B -->
+        <div id="B" class="letra">
+            <h3>Autores con B</h3>
+            <ul>
+                <li><a href="#">Borges</a></li>
+                <li><a href="#">Brandon Sanderson</a></li>
+            </ul>
+        </div>
+        <!-- Autores que comienzan con la letra C -->
+        <div id="C" class="letra">
+            <h3>Autores con C</h3>
+            <ul>
+                <li><a href="#">Carlos Ruiz Zafón</a></li>
+                <li><a href="#">César Vallejo</a></li>
+            </ul>
+        </div>
+        <!-- Autores que comienzan con la letra D -->
+        <div id="D" class="letra">
+            <h3>Autores con D</h3>
+            <ul>
+                <li><a href="#">Dan Brown</a></li>
+                <li><a href="#">Dante Alighieri</a></li>
+            </ul>
+        </div>
+        <!-- Agregar más letras según sea necesario -->
+    </div>
+</section>
 </body>
+<script>
+  const carrusel = document.getElementById('carruselContenido');
+  const items = document.querySelectorAll('.carrusel .item');
+  const total = items.length;
+  let index = 0;
+
+  function updateCarrusel() {
+    carrusel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    index = (index + 1) % total; // Bucle hacia adelante
+    updateCarrusel();
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    index = (index - 1 + total) % total; // Bucle hacia atrás
+    updateCarrusel();
+  });
+
+</script>
 </html>
