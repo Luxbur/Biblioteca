@@ -39,6 +39,8 @@ if ($solicitud == "libros") {
     echo "Datos: " .$nombre.$email.$telefono;
 } elseif ($solicitud == "prestamos") {
     // Procesar la entrada para agregar un prestamo
+    $id_libro = $_POST["id_libro"];
+    $id_usuario = $_POST["id_usuario"];
     $fecha_prestamos = $_POST["fecha_prestamos"];
     $fecha_devolucion = $_POST["fecha_devolucion"];
     echo "Datos: " .$fecha_prestamos.$fecha_devolucion;

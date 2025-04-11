@@ -1,0 +1,173 @@
+/* Estilo de la barra de navegación */
+.navbar {
+    background-color: #f48fb1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.navbar .logo {
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Recomendaciones Semanales */
+#recomendaciones {
+    margin-top: 20px;
+    background-color: #f8bbd0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#recomendaciones ul {
+    list-style-type: none;
+}
+
+#recomendaciones ul li {
+    margin: 10px 0;
+}
+
+#recomendaciones ul li a {
+    color: #880e4f;
+    font-size: 1.1em;
+}
+
+#recomendaciones ul li a:hover {
+    color: #f48fb1;
+}
+
+
+.carrusel {
+position: relative;
+overflow: hidden;
+width: 100%;
+max-width: 800px;
+margin: auto;
+}
+
+
+.carrusel-contenido {
+display: flex;
+transition: transform 0.5s ease-in-out;
+width: 100%;
+}
+
+.item {
+min-width: 100%;
+box-sizing: border-box;
+text-align: center;
+}
+
+.item img {
+width: 200px;
+height: auto;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.item p {
+margin-top: 10px;
+font-family: 'Playfair Display', serif;
+font-weight: bold;
+color: #000000;
+}
+
+/* Botones de navegación */
+.carrusel-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(255, 255, 255, 0.7);
+border: none;
+font-size: 2rem;
+padding: 10px;
+cursor: pointer;
+z-index: 10;
+border-radius: 50%;
+color: #880e4f;
+transition: background-color 0.3s ease;
+}
+
+.carrusel-btn:hover {
+background-color: #f48fb1;
+color: white;
+}
+
+.carrusel-btn.prev {
+left: 10px;
+}
+
+.carrusel-btn.next {
+right: 10px;
+}
+
+#libros-por-genero {
+margin-top: 40px;
+background-color: #ffebee;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#libros-por-genero h2 {
+color: #880e4f;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.generos {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.genero {
+background-color: #fff;
+padding: 10px;
+border-radius: 10px;
+width: 22%;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.genero h3 {
+color: #880e4f;
+font-size: 1.2em;
+text-align: center;
+}
+
+.genero ul {
+list-style-type: none;
+padding: 0;
+}
+
+.genero ul li {
+margin: 8px 0;
+}
+
+.genero ul li a {
+color: #000000;
+text-decoration: none;
+font-size: 1em;
+}
+
+.genero ul li a:hover {
+color: #f48fb1;
+}

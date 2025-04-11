@@ -85,3 +85,69 @@ body {
   th::after{
       content: "";
   }
+
+
+   /* Estilo del formulario */
+   form {
+    background: linear-gradient(to bottom, #fff8e1, #f8bbd0); /* Gradiente sutil en el fondo */
+    border: 2px solid #f48fb1; /* Borde rosa */
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* Máximo ancho reducido del formulario */
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(233, 30, 99, 0.2); /* Sombra suave */
+    margin-top: 20px; /* Espacio superior para separar el formulario del contenido */
+    margin-left: 0; /* Alineación a la izquierda */
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 5px 5px 20px rgba(233, 30, 99, 0.3); /* Efecto de sombra al pasar el ratón */
+}
+
+form label {
+    color: #880e4f; /* Morado oscuro para los labels */
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input[type="number"], form input[type="date"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #f48fb1; /* Borde rosa */
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input[type="number"]:focus, form input[type="date"]:focus {
+    outline: none;
+    border-color: #e91e63; /* Rosa intenso cuando el campo está en foco */
+    box-shadow: 0 0 8px rgba(233, 30, 99, 0.7); /* Efecto de sombra en foco */
+}
+
+form input[type="submit"] {
+    background-color: #f48fb1; /* Rosa más oscuro para el botón */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    margin-top: 10px; /* Espacio superior para el botón */
+}
+
+form input[type="submit"]:hover {
+    background-color: #f06292; /* Rosa aún más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de "elevación" del botón */
+}
+
+form input[type="submit"]:active {
+    transform: translateY(1px); /* Efecto de presión cuando se hace clic */
+}
