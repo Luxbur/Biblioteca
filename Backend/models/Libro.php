@@ -24,13 +24,13 @@ class Libro {
     }
 
     // Método para agregar un nuevo libro a la base de datos
-    public function agregar($id_libros,$titulo, $autor, $anio_publicacion, $disponible) {
+    public function agregar($titulo, $autor, $anio_publicacion, $disponible) {
         // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
-        $stmt = $this->pdo->prepare("INSERT INTO libros (id_libros, titulo, autor, anio_publicacion, disponible) VALUES (:id_libros, :titulo, :autor, :anio_publicacion, :disponible)");
+        $stmt = $this->pdo->prepare("INSERT INTO libros (titulo, autor, anio_publicacion, disponible) VALUES (:titulo, :autor, :anio_publicacion, :disponible)");
         
         // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
         // Los valores del libro se pasan en un array asociativo
-        return $stmt->execute(["id_libros" => $id_libros, "titulo" => $titulo, "autor" => $autor, "anio_publicacion" => $anio_publicacion, "disponible" => $disponible]);
+        return $stmt->execute(["titulo" => $titulo, "autor" => $autor, "anio_publicacion" => $anio_publicacion, "disponible" => $disponible]);
     }
 }
 ?>

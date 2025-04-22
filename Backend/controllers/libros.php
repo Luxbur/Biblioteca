@@ -9,9 +9,9 @@ function obtenerLibros() {
     echo json_encode($libroModel->obtenerTodos()); // echo significa imprimir. El formato json es un formato universal que muestra entre llaves ("") algun objeto.
 }
 
-function agregarLibro($id_libros, $titulo, $autor, $anio_publicacion, $disponible) {
+function agregarLibro($titulo, $autor, $anio_publicacion, $disponible) {
     global $libroModel;
-    if ($libroModel->agregar($id_libros, $titulo, $autor, $anio_publicacion, $disponible)) {
+    if ($libroModel->agregar($titulo, $autor, $anio_publicacion, $disponible)) {
         echo json_encode(["message" => "Libro agregado"]);
     } else {
         echo json_encode(["error" => "Error al agregar el libro"]);

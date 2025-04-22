@@ -31,6 +31,10 @@ if ($solicitud == "libros") {
         $año_de_publicacion = $_POST["año_de_publicacion"];
         $disponible = $_POST["disponible"];
     echo "Datos: " .$titulo.$autor.$año_de_publicacion.$disponible;
+        $autor = $_POST["autor"];
+    agregarLibro($titulo, $autor, $año_de_publicacion, $disponible);
+    global $libroModel; 
+
 }  elseif ($solicitud == "usuarios") {
     // Procesar la entrada para agregar un usuario
     $nombre = $_POST["nombre"];
@@ -44,6 +48,8 @@ if ($solicitud == "libros") {
     $fecha_prestamos = $_POST["fecha_prestamos"];
     $fecha_devolucion = $_POST["fecha_devolucion"];
     echo "Datos: " .$fecha_prestamos.$fecha_devolucion;
+    agregarPrestamo($id_libro, $id_usuario, $fecha_prestamos, $fecha_devolucion) {
+        global $prestamoModel;
 }
 // Si se usa otro método HTTP no permitido, se devuelve un mensaje de error en formato JSON
 else {

@@ -9,7 +9,7 @@ function obtenerPrestamo() {
     echo json_encode($prestamoModel->obtenerTodos()); // Confirmamos que los datos se devuelven en formato JSON
 }
 
-function agregarPrestamo($id_prestamo, $id_libro, $id_usuario, $fecha_prestamos, $fecha_devolucion) {
+function agregarPrestamo($id_libro, $id_usuario, $fecha_prestamos, $fecha_devolucion) {
     global $prestamoModel;
     if ($prestamoModel->agregar($id_prestamo, $id_libro, $id_usuario, $fecha_prestamos, $fecha_devolucion)) {
         echo json_encode(["message" => "prestamo agregado"]);
