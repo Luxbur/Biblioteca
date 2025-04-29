@@ -40,6 +40,7 @@ async function obtenerLibros() {
                     <td class="celda-libro">${libro.autor}</td>
                     <td class="celda-libro">${libro.anio_publicacion}</td>
                     <td class="celda-libro">${libro.disponible == 1 ? "Disponible" : "No disponible"}</td>
+                    <td class="celda-libro"><a href='../Backend/routes/api.php?seccion=libros&accion=eliminar&id=${libro.id_libros}'>Eliminar</a></td>
                 </tr>
             `;
         });

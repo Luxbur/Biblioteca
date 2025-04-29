@@ -33,6 +33,7 @@ async function obtenerPrestamo() {
                         <td class="celda-prestamo">${prestamo.id_usuario}</td>
                         <td class="celda-prestamo">${prestamo.fecha_prestamos}</td>
                         <td class="celda-prestamo">${prestamo.fecha_devolucion}</td>
+                        <td class="celda-prestamo"><a href='../Backend/routes/api.php?seccion=prestamos&accion=eliminar&id=${prestamo.id_prestamo}'>Eliminar</a></td>
                     </tr>
                 `;
             });

@@ -24,13 +24,13 @@ class Usuario {
     }
 
     // Método para agregar un nuevo libro a la base de datos
-    public function agregar($id_usuario, $nombre, $email, $telefono) {
+    public function agregar($nombre, $email, $telefono) {
         // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
-        $stmt = $this->pdo->prepare("INSERT INTO Usuarios (id_usuario, nombre, email, telefono) VALUES (:id_usuario, :nombre, :email, :telefono)");
+        $stmt = $this->pdo->prepare("INSERT INTO Usuarios (nombre, email, telefono) VALUES (:nombre, :email, :telefono)");
         
         // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
         // Los valores del libro se pasan en un array asociativo
-        return $stmt->execute(["id_usuario" => $id_usuario, "nombre" => $nombre, "email" => $email, "telefono" => $telefono]);
+        return $stmt->execute(["nombre" => $nombre, "email" => $email, "telefono" => $telefono]);
     }
 }
 ?>

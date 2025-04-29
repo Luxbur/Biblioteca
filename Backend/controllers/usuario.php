@@ -9,9 +9,9 @@ function obtenerUsuario() {
     echo json_encode($usuarioModel->obtenerTodos()); // echo significa imprimir. El formato json es un formato universal que muestra entre llaves ("") algun objeto.
 }
 
-function agregarUsuario($id_usuario, $nombre, $email, $telefono) {
+function agregarUsuario($nombre, $email, $telefono) {
     global $usuarioModel;
-    if ($usuarioModel->agregar($id_usuario, $nombre, $email, $telefono)) {
+    if ($usuarioModel->agregar($nombre, $email, $telefono)) {
         echo json_encode(["message" => "usuario agregado"]);
     } else {
         echo json_encode(["error" => "Error al agregar el usuario"]);

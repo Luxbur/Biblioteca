@@ -32,6 +32,7 @@ async function obtenerUsuario() {
                     <td class="celda-usuario">${usuario.nombre}</td>
                     <td class="celda-usuario">${usuario.email}</td>
                     <td class="celda-usuario">${usuario.telefono}</td>
+                    <td class="celda-usuario"><a href='../Backend/routes/api.php?seccion=usuarios&accion=eliminar&id=${usuario.id_usuario}'>Eliminar</a></td>
                 </tr>
             `;
         });
