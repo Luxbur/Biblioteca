@@ -10,10 +10,6 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 if ($requestMethod == "GET") {
     $solicitud = $_GET["url"];
     if ($solicitud == "libros") {
-        $accion=$_GET["accion"];
-        if($accion=="eliminar"){
-            //Eliminar los libros [$_GET["id"]]; - llamando a la funcion eliminar libros.
-        }
         obtenerLibros();
     } else if ($solicitud == "usuarios") {
         $accion=$_GET["accion"];
@@ -21,9 +17,6 @@ if ($requestMethod == "GET") {
         }
         obtenerUsuario();
     } else if ($solicitud == "prestamo") {
-        $accion=$_GET["accion"];
-        if($accion=="eliminar"){
-        }
         obtenerPrestamo();
     } else {
         echo json_encode(["error" => "Recurso no encontrado"]);
