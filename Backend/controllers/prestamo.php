@@ -17,4 +17,13 @@ function agregarPrestamo($id_libro, $id_usuario, $fecha_prestamos, $fecha_devolu
         echo json_encode(["error" => "Error al agregar el prestamo"]);
     }
 }
+
+function eliminarPrestamo($id) {
+    global $prestamoModel;
+    if ($prestamoModel->eliminar($id)) {
+        echo json_encode(["message" => "prestamo eliminado"]);
+    } else {
+        echo json_encode(["error" => "Error al eliminar el prestamo"]);
+    }
+}
 ?>

@@ -32,5 +32,14 @@ class Prestamo {
         // Los valores del libro se pasan en un array asociativo
         return $stmt->execute(["id_libro" => $id_libro, "id_usuario" => $id_usuario, "fecha_prestamos" => $fecha_prestamos, "fecha_devolucion" => $fecha_devolucion]);
     }
+
+    public function eliminar($id) {
+        // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
+        $stmt = $this->pdo->prepare("DELETE FROM prestamos WHERE id_prestamo =:id;");
+        
+        // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
+        // Los valores del libro se pasan en un array asociativo
+        return $stmt->execute(["id" => $id]);
+    }
 }
 ?>

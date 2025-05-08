@@ -8,21 +8,24 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 // Si la solicitud es de tipo GET, se llama a la función obtenerLibros()
 if ($requestMethod == "GET") {
-    $solicitud = $_GET["url"];
+    $solicitud = $_GET["seccion"];
     if ($solicitud == "libros") {
         $accion=$_GET["accion"];
         if($accion=="eliminar"){
             //Eliminar los libros [$_GET["id"]]; - llamando a la funcion eliminar libros.
+            eliminarLibro($_GET["id"]);
         }
         obtenerLibros();
     } else if ($solicitud == "usuarios") {
         $accion=$_GET["accion"];
         if($accion=="eliminar"){
+            eliminarUsuario($_GET["id"]);
         }
         obtenerUsuario();
     } else if ($solicitud == "prestamo") {
         $accion=$_GET["accion"];
         if($accion=="eliminar"){
+            eliminarPrestamo($_GET["id"]);
         }
         obtenerPrestamo();
     } else {
@@ -32,7 +35,7 @@ if ($requestMethod == "GET") {
 
 // Si la solicitud es de tipo POST, se procesa la entrada y se agrega un libro
 elseif ($requestMethod == "POST") {
-    $solicitud = $_GET["url"];
+    $solicitud = $_GET["seccion"];
 
 if ($solicitud == "libros") {
         // Procesar la entrada para agregar un libro

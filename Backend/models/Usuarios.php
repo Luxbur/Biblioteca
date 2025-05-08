@@ -32,5 +32,14 @@ class Usuario {
         // Los valores del libro se pasan en un array asociativo
         return $stmt->execute(["nombre" => $nombre, "email" => $email, "telefono" => $telefono]);
     }
+
+    public function eliminar($id) {
+        // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
+        $stmt = $this->pdo->prepare("DELETE FROM usuarios WHERE id_usuario =:id;");
+        
+        // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
+        // Los valores del libro se pasan en un array asociativo
+        return $stmt->execute(["id" => $id]);
+    }
 }
 ?>

@@ -17,4 +17,13 @@ function agregarLibro($titulo, $autor, $anio_publicacion, $disponible) {
         echo json_encode(["error" => "Error al agregar el libro"]);
     }
 }
+
+function eliminarLibro($id) {
+    global $libroModel;
+    if ($libroModel->eliminar($id)) {
+        echo json_encode(["message" => "Libro eliminado"]);
+    } else {
+        echo json_encode(["error" => "Error al eliminar el libro"]);
+    }
+}
 ?>

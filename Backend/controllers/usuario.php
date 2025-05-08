@@ -17,4 +17,13 @@ function agregarUsuario($nombre, $email, $telefono) {
         echo json_encode(["error" => "Error al agregar el usuario"]);
     }
 }
+
+function eliminarUsuario($id) {
+    global $usuarioModel;
+    if ($usuarioModel->eliminar($id)) {
+        echo json_encode(["message" => "usuario eliminado"]);
+    } else {
+        echo json_encode(["error" => "Error al eliminar el usuario"]);
+    }
+}
 ?>
