@@ -6,7 +6,7 @@
 //let: puede ser cambiaod en el futuro.
 async function obtenerLibros() {
     try{
-        const respuesta=await fetch("../Backend/routes/api.php?url=libros");
+        const respuesta=await fetch("../Backend/routes/api.php?url=libros&accion=ver");
         const libros=await respuesta.json();
         console.log(libros);
         const contenedor=document.getElementById ("contenedor-libros");
@@ -27,6 +27,7 @@ async function obtenerLibros() {
                         <th>Autor</th>
                         <th>Año de Publicación</th>
                         <th>Disponibilidad</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,7 +41,9 @@ async function obtenerLibros() {
                     <td class="celda-libro">${libro.autor}</td>
                     <td class="celda-libro">${libro.anio_publicacion}</td>
                     <td class="celda-libro">${libro.disponible == 1 ? "Disponible" : "No disponible"}</td>
-                    <td class="celda-libro"><a href='../Backend/routes/api.php?seccion=libros&accion=eliminar&id=${libro.id_libros}'>Eliminar</a></td>
+                    
+              
+                <td class="celda-libro"><a href='../Backend/routes/api.php?seccion=libros&accion=eliminar&id=${libro.id_libros}'>Eliminar</a></td>
                 </tr>
             `;
         });
