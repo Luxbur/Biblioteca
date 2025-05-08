@@ -1,6 +1,6 @@
 async function obtenerPrestamo() {
         try{
-            const respuesta=await fetch("../Backend/routes/api.php?url=prestamos&accion=ver");
+            const respuesta=await fetch("../Backend/routes/api.php?seccion=prestamos&accion=ver");
             const prestamos=await respuesta.json();
             const contenedor=document.getElementById ("contenedor-prestamos");
             contenedor.innerHTML=crearTabla(prestamos);

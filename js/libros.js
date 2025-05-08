@@ -6,7 +6,7 @@
 //let: puede ser cambiaod en el futuro.
 async function obtenerLibros() {
     try{
-        const respuesta=await fetch("../Backend/routes/api.php?url=libros&accion=ver");
+        const respuesta=await fetch("../Backend/routes/api.php?seccion=libros&accion=ver");
         const libros=await respuesta.json();
         console.log(libros);
         const contenedor=document.getElementById ("contenedor-libros");

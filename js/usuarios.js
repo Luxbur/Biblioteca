@@ -1,6 +1,6 @@
 async function obtenerUsuario() {
     try{
-        const respuesta=await fetch("../Backend/routes/api.php?url=usuarios&accion=ver");
+        const respuesta=await fetch("../Backend/routes/api.php?seccion=usuarios&accion=ver");
         const usuarios=await respuesta.json();
         console.log(usuarios);
         const contenedor=document.getElementById ("contenedor-usuarios");

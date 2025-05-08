@@ -12,22 +12,27 @@ if ($requestMethod == "GET") {
     if ($solicitud == "libros") {
         $accion=$_GET["accion"];
         if($accion=="eliminar"){
-            //Eliminar los libros [$_GET["id"]]; - llamando a la funcion eliminar libros.
             eliminarLibro($_GET["id"]);
+        }else{
+            obtenerLibros();
         }
-        obtenerLibros();
+      
     } else if ($solicitud == "usuarios") {
         $accion=$_GET["accion"];
         if($accion=="eliminar"){
             eliminarUsuario($_GET["id"]);
+        }else{
+            obtenerUsuario();
         }
-        obtenerUsuario();
-    } else if ($solicitud == "prestamo") {
+       
+    } else if ($solicitud == "prestamos") {
         $accion=$_GET["accion"];
         if($accion=="eliminar"){
             eliminarPrestamo($_GET["id"]);
+        }else{
+            obtenerPrestamo();
         }
-        obtenerPrestamo();
+       
     } else {
         echo json_encode(["error" => "Recurso no encontrado"]);
     }
